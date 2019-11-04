@@ -1,0 +1,47 @@
+{
+  "name": "sls-code-pipeline",
+  "engines": {
+    "node": ">=6.0"
+  },
+  "version": "1.0.0",
+  "description": "A Serverless plugin to setup a CI/CD pipeline in AWS for a Github project",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ccverak/aws-auto-ci-cd.git"
+  },
+  "author": "Carlos Castellanos Vera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ccverak/aws-auto-ci-cd/issues"
+  },
+  "homepage": "https://github.com/ccverak/aws-auto-ci-cd#readme",
+  "files": [
+    "bin",
+    "lib",
+    "package.json",
+    "README.md"
+  ],
+  "main": "index.js",
+  "bin": {
+    "sls-code-pipeline": "./bin/sls-code-pipeline.js",
+    "sls-cicd": "./bin/sls-code-pipeline.js"
+  },
+  
+  "dependencies": {
+    "cfn": "^1.8.1",
+    "prompts": "^2.2.1"
+  },
+  "devDependencies": {
+    "husky": "^3.0.1",
+    "jest": "^24.9.0",
+    "standard": "*"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "yarn test"
+    }
+  }
+}
