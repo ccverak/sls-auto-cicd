@@ -180,6 +180,15 @@ Resources:
                 Resource: '*'
               - Effect: Allow
                 Action:
+                  - "logs:CreateLogGroup"
+                  - "logs:CreateLogStream"
+                  - "logs:PutLogEvents"
+                  - "logs:Describe*"
+                  - "logs:Get*"
+                Resource:
+                  - Fn::Sub: arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/codebuild/*
+              - Effect: Allow
+                Action:
                   - 'elasticbeanstalk:*'
                   - 'ec2:*'
                   - 'elasticloadbalancing:*'
@@ -201,7 +210,7 @@ Resources:
         Type: CODEPIPELINE
       Environment:
         ComputeType: BUILD_GENERAL1_SMALL
-        Image: aws/codebuild/nodejs:10.0.0
+        Image: node:10
         Type: LINUX_CONTAINER
       Name: !Sub ${AWS::StackName}-CodeBuildProject
       ServiceRole: !Ref CodePipelineRole

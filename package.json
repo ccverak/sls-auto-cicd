@@ -43,10 +43,5 @@
     "husky": "^3.0.1",
     "jest": "^24.9.0",
     "standard": "*"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "yarn test"
-    }
   }
 }
