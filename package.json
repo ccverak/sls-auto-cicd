@@ -29,8 +29,13 @@
     "sls-code-pipeline": "./bin/sls-code-pipeline.js",
     "sls-cicd": "./bin/sls-code-pipeline.js"
   },
-  
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
   "dependencies": {
+    "aws-sdk": "^2.563.0",
     "cfn": "^1.8.1",
     "prompts": "^2.2.1"
   },
